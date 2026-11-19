@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UrGent: Cooling the Built Environment with a Self-Evolving Urban Design Agent</title>
+  <meta name="description" content="UrGent: Cooling the Built Environment with a Self-Evolving Urban Design Agent — AAAI-27 Demonstration Track.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="UrGent: Cooling the Built Environment with a Self-Evolving Urban Design Agent">
+  <meta property="og:description" content="UrGent: Cooling the Built Environment with a Self-Evolving Urban Design Agent — AAAI-27 Demonstration Track.">
+  <style>
+    :root {
+      color-scheme: light;
+      background: #fff;
+      color: #202625;
+      font: 100%/1.65 system-ui, sans-serif;
+    }
+
+    body { margin: 0; }
+
+    main {
+      box-sizing: border-box;
+      max-width: 56.25rem;
+      margin-inline: auto;
+      padding: clamp(2.75rem, 8vw, 5rem) clamp(1.125rem, 4vw, 2rem);
+    }
+
+    header { text-align: center; }
+
+    .badge {
+      display: inline-block;
+      margin: 0;
+      padding: 0.25rem 0.875rem;
+      border-radius: 999px;
+      background: #e6f3ed;
+      color: #17553d;
+      font-size: 0.875rem;
+      font-weight: 650;
+    }
+
+    h1, h2 { font-family: Georgia, serif; }
+
+    h1 {
+      margin: 1rem 0 1.35rem;
+      font-size: clamp(2rem, 5.3vw, 3.65rem);
+      font-weight: 600;
+      line-height: 1.08;
+      text-wrap: balance;
+    }
+
+    .authors {
+      margin: 0;
+      font-size: clamp(1rem, 2.2vw, 1.125rem);
+      text-wrap: balance;
+    }
+
+    .author { white-space: nowrap; }
+
+    sup {
+      font-size: 0.72em;
+      line-height: 0;
+    }
+
+    .affiliations, .notes { color: #515a57; }
+
+    .affiliations {
+      margin: 0.85rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .notes {
+      margin: 0.75rem 0 0;
+      font-size: 0.875rem;
+    }
+
+    .notes a {
+      color: inherit;
+      text-underline-offset: 0.18em;
+      overflow-wrap: anywhere;
+    }
+
+    .demo {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin-block-start: clamp(2.5rem, 6vw, 3.75rem);
+      border-radius: 0.5rem;
+      background: #141817;
+    }
+
+    section {
+      margin-block-start: clamp(2.5rem, 6vw, 3.75rem);
+      border-block-start: 1px solid #dfe5e2;
+      padding-block-start: 1.5rem;
+    }
+
+    h2 {
+      margin: 0 0 0.55rem;
+      font-size: clamp(1.55rem, 3vw, 1.9rem);
+      line-height: 1.2;
+    }
+
+    section p { margin: 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="badge">AAAI-27 Demonstration Track</p>
+      <h1>UrGent: Cooling the Built Environment with a Self-Evolving Urban Design Agent</h1>
+      <p class="authors">
+        <span class="author">Jaeyeon Kim<sup>*1</sup>,</span>
+        <span class="author">Caishun Chen<sup>*1</sup>,</span>
+        <span class="author">Po-Yen Lai<sup>*1</sup>,</span>
+        <span class="author">Gao Shan<sup>3</sup>,</span>
+        <span class="author">Yew-Soon Ong<sup>2,1</sup>,</span>
+        <span class="author">Jian Cheng Wong<sup>1†</sup></span>
+      </p>
+      <ul class="affiliations" aria-label="Affiliations">
+        <li><sup>1</sup> Institute of Advanced Intelligence and Computing, A*STAR, Singapore</li>
+        <li><sup>2</sup> Nanyang Technological University, Singapore</li>
+        <li><sup>3</sup> University of California San Diego, La Jolla, CA, USA</li>
+      </ul>
+      <p class="notes">* These authors contributed equally. &nbsp; † Corresponding author: <a href="mailto:wongj@a-star.edu.sg">wongj@a-star.edu.sg</a></p>
+    </header>
+
+    <video class="demo" controls playsinline preload="metadata" aria-label="UrGent demonstration video">
+      <source src="assets/urgent-demo.mp4" type="video/mp4">
+    </video>
+
+    <section aria-labelledby="abstract-title">
+      <h2 id="abstract-title">Abstract</h2>
+      <p>In this demo, we present UrGent, an urban design agent that autonomously performs microclimate physics-informed cooling design for city planners. UrGent simulates multiple sites across a city to identify and rank pedestrian heat-stress hotspots and, given a cooling objective, proposes, runs physics simulations, and analyzes surface-material combinations for the affected site. At its core are a search that invokes a physics-based microclimate solver as an agent skill and a memory that retains validated findings with the conditions under which they hold, so that a search for better surface-material combinations at a new site reaches its objective with fewer simulations. By automating both where to intervene and what to apply, UrGent enables planners to evaluate cooling alternatives across sites efficiently, with every decision grounded in physics.</p>
+    </section>
+  </main>
+</body>
+</html>
