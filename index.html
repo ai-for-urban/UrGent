@@ -4,111 +4,164 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UrGent: Cooling the Built Environment with a Self-Evolving Urban Design Agent</title>
-  <meta name="description" content="UrGent: Cooling the Built Environment with a Self-Evolving Urban Design Agent — AAAI-27 Demonstration Track.">
+  <meta name="description" content="UrGent: Cooling the Built Environment with a Self-Evolving Urban Design Agent — Accepted to AAAI-27 Demonstration Track.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="UrGent: Cooling the Built Environment with a Self-Evolving Urban Design Agent">
-  <meta property="og:description" content="UrGent: Cooling the Built Environment with a Self-Evolving Urban Design Agent — AAAI-27 Demonstration Track.">
+  <meta property="og:description" content="UrGent: Cooling the Built Environment with a Self-Evolving Urban Design Agent — Accepted to AAAI-27 Demonstration Track.">
   <style>
     :root {
+      --bg: #faf8f5;
+      --text: #2a2622;
+      --muted: #5c554e;
+      --accent: #00308a;
+      --rule: #2a262238;
+      --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
       color-scheme: light;
-      background: #fff;
-      color: #202625;
-      font: 100%/1.65 system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      font: 100%/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     }
 
     body { margin: 0; }
 
     main {
       box-sizing: border-box;
-      max-width: 56.25rem;
+      width: min(100% - 2.5rem, 60rem);
       margin-inline: auto;
-      padding: clamp(2.75rem, 8vw, 5rem) clamp(1.125rem, 4vw, 2rem);
+      padding-block: clamp(3.5rem, 8vw, 7rem) clamp(2rem, 5vw, 3rem);
     }
 
-    header { text-align: center; }
-
-    .badge {
-      display: inline-block;
-      margin: 0;
-      padding: 0.25rem 0.875rem;
-      border-radius: 999px;
-      background: #e6f3ed;
-      color: #17553d;
-      font-size: 0.875rem;
-      font-weight: 650;
+    header {
+      padding-block-end: clamp(2.25rem, 5vw, 3.25rem);
+      border-block-end: 1px solid var(--rule);
+      text-align: center;
     }
-
-    h1, h2 { font-family: Georgia, serif; }
 
     h1 {
-      margin: 1rem 0 1.35rem;
-      font-size: clamp(2rem, 5.3vw, 3.65rem);
-      font-weight: 600;
-      line-height: 1.08;
+      margin: 0;
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.4vw, 2.875rem);
+      font-weight: 700;
+      line-height: 1.2;
       text-wrap: balance;
+    }
+
+    .phrase { display: inline-block; }
+
+    .venue {
+      display: inline-block;
+      margin: 1rem 0 0;
+      padding: 0.3rem 1rem;
+      border: 1px solid #00308a33;
+      border-radius: 999px;
+      background: #00308a12;
+      color: var(--accent);
+      font-size: 0.9375rem;
+      font-weight: 500;
     }
 
     .authors {
-      margin: 0;
-      font-size: clamp(1rem, 2.2vw, 1.125rem);
+      margin: 2rem 0 0;
+      font-size: clamp(1.0625rem, 2vw, 1.1875rem);
+      font-weight: 600;
+      line-height: 1.5;
       text-wrap: balance;
     }
 
-    .author { white-space: nowrap; }
+    .author, .nowrap { white-space: nowrap; }
 
     sup {
-      font-size: 0.72em;
+      color: var(--muted);
+      font-size: 0.7em;
+      font-weight: 400;
       line-height: 0;
     }
 
-    .affiliations, .notes { color: #515a57; }
-
     .affiliations {
-      margin: 0.85rem 0 0;
+      margin: 0.75rem 0 0;
       padding: 0;
       list-style: none;
+      color: var(--muted);
+      font-size: 0.9375rem;
+      line-height: 1.6;
     }
 
     .notes {
       margin: 0.75rem 0 0;
+      color: var(--muted);
       font-size: 0.875rem;
     }
 
-    .notes a {
-      color: inherit;
-      text-underline-offset: 0.18em;
-      overflow-wrap: anywhere;
+    .notes span {
+      display: inline-block;
+      margin-inline: 0.5rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 0.15em;
+    }
+
+    footer {
+      margin-block-start: clamp(3rem, 7vw, 4.5rem);
+      padding-block-start: 2rem;
+      border-block-start: 1px solid var(--rule);
+    }
+
+    .logo {
+      display: block;
+      width: 15rem;
+      height: 4rem;
+      margin-inline: auto;
+      object-fit: cover;
     }
 
     .demo {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      margin-block-start: clamp(2.5rem, 6vw, 3.75rem);
-      border-radius: 0.5rem;
-      background: #141817;
+      margin-block-start: clamp(2.25rem, 5vw, 3.25rem);
+      padding-block-start: clamp(2.25rem, 5vw, 3.25rem);
+      border-block-start: 1px solid var(--rule);
     }
 
-    section {
-      margin-block-start: clamp(2.5rem, 6vw, 3.75rem);
-      border-block-start: 1px solid #dfe5e2;
-      padding-block-start: 1.5rem;
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 0.625rem;
+      background: #1c1a18;
+      box-shadow: 0 0 0 1px #2a262214, 0 1.25rem 2.5rem -1.25rem #2a262240;
+    }
+
+    .abstract {
+      max-width: 48rem;
+      margin: clamp(2.25rem, 5vw, 3.25rem) auto 0;
     }
 
     h2 {
-      margin: 0 0 0.55rem;
-      font-size: clamp(1.55rem, 3vw, 1.9rem);
+      margin: 0 0 0.875rem;
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 1.875rem);
+      font-weight: 700;
       line-height: 1.2;
+      text-align: center;
     }
 
-    section p { margin: 0; }
+    .abstract p {
+      margin: 0;
+      padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.25rem, 3.5vw, 2rem);
+      border-radius: 0.625rem;
+      background: #00308a0b;
+      font-size: 1.0625rem;
+      line-height: 1.75;
+    }
   </style>
 </head>
 <body>
   <main>
     <header>
-      <p class="badge">AAAI-27 Demonstration Track</p>
-      <h1>UrGent: Cooling the Built Environment with a Self-Evolving Urban Design Agent</h1>
+      <h1><span class="phrase">UrGent: Cooling the Built Environment</span> <span class="phrase">with a <span class="nowrap">Self-Evolving</span> Urban Design Agent</span></h1>
+      <p class="venue">Accepted to AAAI-27 Demonstration Track</p>
       <p class="authors">
         <span class="author">Jaeyeon Kim<sup>*1</sup>,</span>
         <span class="author">Caishun Chen<sup>*1</sup>,</span>
@@ -122,17 +175,27 @@
         <li><sup>2</sup> Nanyang Technological University, Singapore</li>
         <li><sup>3</sup> University of California San Diego, La Jolla, CA, USA</li>
       </ul>
-      <p class="notes">* These authors contributed equally. &nbsp; † Corresponding author: <a href="mailto:wongj@a-star.edu.sg">wongj@a-star.edu.sg</a></p>
+      <p class="notes">
+        <span>* These authors contributed equally.</span>
+        <span>† Corresponding author: <a href="mailto:wongj@a-star.edu.sg">wongj@a-star.edu.sg</a></span>
+      </p>
     </header>
 
-    <video class="demo" controls playsinline preload="metadata" aria-label="UrGent demonstration video">
-      <source src="assets/urgent-demo.mp4" type="video/mp4">
-    </video>
-
-    <section aria-labelledby="abstract-title">
+    <section class="abstract" aria-labelledby="abstract-title">
       <h2 id="abstract-title">Abstract</h2>
       <p>In this demo, we present UrGent, an urban design agent that autonomously performs microclimate physics-informed cooling design for city planners. UrGent simulates multiple sites across a city to identify and rank pedestrian heat-stress hotspots and, given a cooling objective, proposes, runs physics simulations, and analyzes surface-material combinations for the affected site. At its core are a search that invokes a physics-based microclimate solver as an agent skill and a memory that retains validated findings with the conditions under which they hold, so that a search for better surface-material combinations at a new site reaches its objective with fewer simulations. By automating both where to intervene and what to apply, UrGent enables planners to evaluate cooling alternatives across sites efficiently, with every decision grounded in physics.</p>
     </section>
+
+    <section class="demo" aria-labelledby="demo-title">
+      <h2 id="demo-title">Demo Video</h2>
+      <video controls playsinline preload="metadata" poster="assets/urgent-demo-poster.webp" aria-labelledby="demo-title">
+        <source src="assets/urgent-demo.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <footer>
+      <img class="logo" src="assets/astar-iaic-logo.png" width="3833" height="1691" alt="A*STAR Institute of Advanced Intelligence and Computing">
+    </footer>
   </main>
 </body>
 </html>
