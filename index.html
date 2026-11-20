@@ -28,13 +28,22 @@
       box-sizing: border-box;
       width: min(100% - 2.5rem, 60rem);
       margin-inline: auto;
-      padding-block: clamp(3.5rem, 8vw, 7rem) clamp(2rem, 5vw, 3rem);
+      padding-block: 0 clamp(2rem, 5vw, 3rem);
     }
 
-    header {
-      padding-block-end: clamp(2.25rem, 5vw, 3.25rem);
+    header { text-align: center; }
+
+    .band {
+      padding: clamp(3rem, 7vw, 5.5rem) 1.25rem clamp(2.5rem, 5vw, 3.5rem);
+      background: #00308a10;
+    }
+
+    .byline {
+      box-sizing: border-box;
+      width: min(100% - 2.5rem, 60rem);
+      margin-inline: auto;
+      padding-block: clamp(1.75rem, 4vw, 2.5rem) clamp(2.25rem, 5vw, 3.25rem);
       border-block-end: 1px solid var(--rule);
-      text-align: center;
     }
 
     h1 {
@@ -53,16 +62,16 @@
       display: inline-block;
       margin: 1rem 0 0;
       padding: 0.3rem 1rem;
-      border: 1px solid #00308a33;
+      border: 1px solid #00308a40;
       border-radius: 999px;
-      background: #00308a12;
+      background: #fff;
       color: var(--accent);
       font-size: 0.9375rem;
       font-weight: 500;
     }
 
     .authors {
-      margin: 2rem 0 0;
+      margin: 0;
       font-size: clamp(1.0625rem, 2vw, 1.1875rem);
       font-weight: 600;
       line-height: 1.5;
@@ -158,10 +167,12 @@
   </style>
 </head>
 <body>
-  <main>
-    <header>
+  <header>
+    <div class="band">
       <h1><span class="phrase">UrGent: Cooling the Built Environment</span> <span class="phrase">with a <span class="nowrap">Self-Evolving</span> Urban Design Agent</span></h1>
       <p class="venue">Accepted to AAAI-27 Demonstration Track</p>
+    </div>
+    <div class="byline">
       <p class="authors">
         <span class="author">Jaeyeon Kim<sup>*1</sup>,</span>
         <span class="author">Caishun Chen<sup>*1</sup>,</span>
@@ -179,8 +190,10 @@
         <span>* These authors contributed equally.</span>
         <span>† Corresponding author: <a href="mailto:wongj@a-star.edu.sg">wongj@a-star.edu.sg</a></span>
       </p>
-    </header>
+    </div>
+  </header>
 
+  <main>
     <section class="abstract" aria-labelledby="abstract-title">
       <h2 id="abstract-title">Abstract</h2>
       <p>In this demo, we present UrGent, an urban design agent that autonomously performs microclimate physics-informed cooling design for city planners. UrGent simulates multiple sites across a city to identify and rank pedestrian heat-stress hotspots and, given a cooling objective, proposes, runs physics simulations, and analyzes surface-material combinations for the affected site. At its core are a search that invokes a physics-based microclimate solver as an agent skill and a memory that retains validated findings with the conditions under which they hold, so that a search for better surface-material combinations at a new site reaches its objective with fewer simulations. By automating both where to intervene and what to apply, UrGent enables planners to evaluate cooling alternatives across sites efficiently, with every decision grounded in physics.</p>
